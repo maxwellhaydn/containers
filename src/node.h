@@ -3,18 +3,15 @@
 class Node {
   public:
     /* Default constructor */
-    Node() : next(0), value(0) { }
+    Node(int v = 0) : next(0), value(v) { }
 
-    Node(int v) : next(0), value(v) { }
+    /* Modifiers */
+    void setNext(Node *n) { next = n; }
+    void setValue(int v) { value = v; }
 
-    /* Copy constructor */
-    Node(const Node& other);
-
-    /* Destructor */
-    ~Node();
-
-    /* Assignment operator */
-    Node& operator=(const Node& other);
+    /* Accessors */
+    Node* getNext() const { return next; }
+    int getValue() const { return value; }
 
   private:
     Node *next;
