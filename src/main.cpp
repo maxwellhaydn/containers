@@ -1,9 +1,9 @@
 #include <iostream>
-#include "node.h"
+#include "slist.h"
 
 int main(int argc, char* argv[]) {
-  Node n;
-  std::cout << "n.value = " << n.getValue() << std::endl;
+  SList list;
+  SList list2(list);
 
   return 0;
 }

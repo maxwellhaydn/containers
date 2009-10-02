@@ -16,6 +16,9 @@ class SList {
     /* Assignment operator */
     SList& operator=(const SList& other);
 
+    Node *getHead() const { return head; }
+    bool isEmpty() const { return head == 0; }
+
   private:
     Node *head;
 };
