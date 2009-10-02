@@ -5,6 +5,9 @@ class Node {
     /* Default constructor */
     Node(int v = 0) : next(0), value(v) { }
 
+    /* Destructor */
+    ~Node();
+
     /* Modifiers */
     void setNext(Node *n) { next = n; }
     void setValue(int v) { value = v; }
@@ -12,6 +15,8 @@ class Node {
     /* Accessors */
     Node* getNext() const { return next; }
     int getValue() const { return value; }
+
+    bool hasNext() const { return next != 0; }
 
   private:
     Node *next;

@@ -2,3 +2,7 @@
 
 #include "node.h"
 
+Node::~Node() {
+  delete next;
+}
+
