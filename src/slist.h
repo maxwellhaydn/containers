@@ -8,13 +8,15 @@ class SList {
     SList() : head(0) { }
 
     /* Copy constructor */
-    SList(const SList& other);
+    //SList(const SList& other);
 
     /* Destructor */
     ~SList();
 
     /* Assignment operator */
-    SList& operator=(const SList& other);
+    //SList& operator=(const SList& other);
+
+    bool append(int value);
 
     Node *getHead() const { return head; }
     bool isEmpty() const { return head == 0; }

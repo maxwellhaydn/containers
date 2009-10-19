@@ -2,7 +2,7 @@
 
 #include "slist.h"
 
-SList::SList(const SList& other) {
+/*SList::SList(const SList& other) {
   // If other list is empty, do nothing
   if (other.isEmpty()) {
     head = 0;
@@ -22,17 +22,35 @@ SList::SList(const SList& other) {
     current->setNext(next);
     current = next;
   }
-}
+}*/
 
 SList::~SList() {
   delete head;
 }
 
-SList& SList::operator=(const SList& other) {
+/*SList& SList::operator=(const SList& other) {
   // Check for self-assignment
   if (this != &other) {
     
   }
 
   return *this;
+}*/
+
+bool SList::append(int value) {
+  Node *newNode = new Node(value);
+  if (isEmpty()) {
+    head = newNode;
+  }
+  else {
+    // Find the last node in the list
+    Node *current = head;
+    while (current->hasNext()) {
+      current = current->getNext();
+    }
+
+    // Append newNode to the last node
+    current->setNext(newNode);
+  }
 }
+
