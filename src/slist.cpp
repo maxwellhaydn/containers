@@ -37,7 +37,7 @@ SList::~SList() {
   return *this;
 }*/
 
-bool SList::append(int value) {
+void SList::append(int value) {
   Node *newNode = new Node(value);
   if (isEmpty()) {
     head = newNode;
