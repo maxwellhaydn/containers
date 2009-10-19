@@ -58,6 +58,13 @@ void SList::append(int value) {
   }
 }
 
+void SList::clear() {
+  // Calling the destructor for the head node will in turn call the
+  // destructor for each node in the list
+  delete head;
+  head = 0;
+}
+
 void SList::printContents() {
   if (isEmpty()) {
     std::cout << "Empty List" << std::endl;

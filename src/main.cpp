@@ -8,6 +8,15 @@ int main(int argc, char* argv[]) {
   list1.append(7); 
   SList list2(list1);
 
+
+  std::cout << "list1:" << std::endl;
+  list1.printContents();
+  std::cout << "list2:" << std::endl;
+  list2.printContents();
+  
+  std::cout << "list2.clear()" << std::endl;
+  list2.clear();
+
   std::cout << "list1:" << std::endl;
   list1.printContents();
   std::cout << "list2:" << std::endl;

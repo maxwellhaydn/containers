@@ -16,7 +16,11 @@ class SList {
     /* Assignment operator */
     //SList& operator=(const SList& other);
 
+    /* Append an item to the list */
     void append(int value);
+
+    /* Clear all items from the list */
+    void clear();
 
     bool isEmpty() const { return head == 0; }
 
