@@ -20,9 +20,12 @@ class SList {
 
     bool isEmpty() const { return head == 0; }
 
+    /* Print the contents of the list in order */
+    void printContents();
+
   private:
     /* Get the head of the list */
-    Node *getHead() const { return head; }
+    Node *getHead() const { return head; } // Maybe this should be protected?
 
     Node *head;
 };

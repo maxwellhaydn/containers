@@ -2,6 +2,8 @@
 
 #include "slist.h"
 
+#include <iostream>
+
 SList::SList(const SList& other) {
   // Initialize head
   head = 0;
@@ -53,6 +55,21 @@ void SList::append(int value) {
 
     // Append newNode to the last node
     current->setNext(newNode);
+  }
+}
+
+void SList::printContents() {
+  if (isEmpty()) {
+    std::cout << "Empty List" << std::endl;
+  }
+  else {
+    Node *current = head;
+    std::cout << current->getValue() << std::endl;
+
+    while (current->hasNext()) {
+      current = current->getNext();
+      std::cout << current->getValue() << std::endl;
+    }
   }
 }
 

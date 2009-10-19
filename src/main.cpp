@@ -2,11 +2,16 @@
 #include "slist.h"
 
 int main(int argc, char* argv[]) {
-  SList list;
-  list.append(1);
-  list.append(2);
-  list.append(7); 
-  SList list2(list);
+  SList list1;
+  list1.append(1);
+  list1.append(2);
+  list1.append(7); 
+  SList list2(list1);
+
+  std::cout << "list1:" << std::endl;
+  list1.printContents();
+  std::cout << "list2:" << std::endl;
+  list2.printContents();
 
   return 0;
 }
