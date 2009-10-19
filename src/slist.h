@@ -18,9 +18,11 @@ class SList {
 
     bool append(int value);
 
-    Node *getHead() const { return head; }
     bool isEmpty() const { return head == 0; }
 
   private:
+    /* Get the head of the list */
+    Node *getHead() const { return head; }
+
     Node *head;
 };
