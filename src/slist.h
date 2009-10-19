@@ -8,7 +8,7 @@ class SList {
     SList() : head(0) { }
 
     /* Copy constructor */
-    //SList(const SList& other);
+    SList(const SList& other);
 
     /* Destructor */
     ~SList();

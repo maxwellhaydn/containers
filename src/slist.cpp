@@ -2,10 +2,12 @@
 
 #include "slist.h"
 
-/*SList::SList(const SList& other) {
+SList::SList(const SList& other) {
+  // Initialize head
+  head = 0;
+
   // If other list is empty, do nothing
   if (other.isEmpty()) {
-    head = 0;
     return;
   }
 
@@ -22,7 +24,7 @@
     current->setNext(next);
     current = next;
   }
-}*/
+}
 
 SList::~SList() {
   delete head;
