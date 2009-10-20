@@ -13,18 +13,19 @@ SList::SList(const SList& other) {
     return;
   }
 
+  Node *current = 0;  // Pointer to the node being copied from other list
+  Node *last = 0; // Pointer to the last node added to this list
+
   // First copy head node of other list
-  Node *otherHead = other.getHead();
-  head = new Node(otherHead->getValue());
+  current = other.getHead();
+  last = new Node(current->getValue());
+  head = last;
 
   // Traverse other list, copying each node along the way
-  Node *otherCurrent = otherHead;
-  Node *current = head;
-  while (otherCurrent->hasNext()) {
-    otherCurrent = otherCurrent->getNext();
-    Node *next = new Node(otherCurrent->getValue());
-    current->setNext(next);
-    current = next;
+  while (current->hasNext()) {
+    current = current->getNext();
+    last->setNext(new Node(current->getValue()));
+    last = last->getNext();
   }
 }
 
