@@ -46,7 +46,7 @@ class SList {
      *
      * @return whether the list is empty
      */
-    bool isEmpty() const { return head == 0; }
+    bool isEmpty() const;
 
     /**
      * Print the contents of the list to stdout in order from first to
@@ -60,7 +60,17 @@ class SList {
      * 
      * @return the head node
      */
-    Node *getHead() const { return head; } // Maybe this should be protected?
+    Node* getHead() const;  // Maybe this should be protected?
 
     Node *head;
 };
+
+/* Inline function definitions */
+inline bool SList::isEmpty() const {
+  return head == 0;
+}
+
+inline Node* SList::getHead() const {
+  return head;
+}
+
