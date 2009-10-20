@@ -5,10 +5,8 @@
 #include <iostream>
 
 SList::SList(const SList& other) {
-  // Initialize head
   head = 0;
 
-  // If other list is empty, do nothing
   if (other.isEmpty()) {
     return;
   }
@@ -30,13 +28,15 @@ SList::SList(const SList& other) {
 }
 
 SList::~SList() {
+  // Calling the destructor for the head node will in turn call the
+  // destructor for each node in the list
   delete head;
 }
 
 /*SList& SList::operator=(const SList& other) {
   // Check for self-assignment
   if (this != &other) {
-    
+        
   }
 
   return *this;
@@ -45,7 +45,6 @@ SList::~SList() {
 void SList::append(int value) {
   Node *newNode = new Node(value);
 
-  // If list is empty, the new node becomes the head
   if (isEmpty()) {
     head = newNode;
     return;
@@ -69,13 +68,11 @@ void SList::clear() {
 }
 
 void SList::printContents() {
-  // If list is empty, print "Empty List"
   if (isEmpty()) {
     std::cout << "Empty List" << std::endl;
     return;
   }
 
-  // Traverse the list, printing contents along the way
   Node *current = head;
   do {
     std::cout << current->getValue() << std::endl;
