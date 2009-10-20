@@ -1,13 +1,19 @@
 // Node class for a linked list
 
+template <typename T>
 class Node {
   public:
     /**
      * Default constructor.
+     */
+    Node() : next(0) { }
+
+    /**
+     * Construct a node with the given value.
      *
      * @param v the value to be stored in this node
      */
-    Node(int v = 0) : next(0), value(v) { }
+    Node(T v) : next(0), value(v) { }
 
     /**
      * Destructor.
@@ -19,28 +25,28 @@ class Node {
      *
      * @param n the next node
      */
-    void setNext(Node *n);
+    void setNext(Node<T> *n);
 
     /**
      * Set the value of this node.
      *
      * @param v the value
      */
-    void setValue(int v);
+    void setValue(T v);
 
     /**
      * Get the next pointer of this node.
      *
      * @return the next pointer
      */
-    Node* getNext() const;
+    Node<T>* getNext() const;
 
     /**
      * Get the value of this node.
      *
      * @return the value
      */
-    int getValue() const;
+    T getValue() const;
 
     /**
      * Whether this node's next pointer points to another node (i.e. has a
@@ -51,28 +57,37 @@ class Node {
     bool hasNext() const;
 
   private:
-    Node *next;
-    int value;  // int for now, will be templated later
+    Node<T> *next;
+    T value;
 };
 
-/* Inline function definitions */
-inline void Node::setNext(Node *n) {
+template <typename T>
+Node<T>::~Node() {
+  delete next;
+}
+
+template <typename T>
+inline void Node<T>::setNext(Node<T> *n) {
   next = n;
 }
 
-inline void Node::setValue(int v) {
+template <typename T>
+inline void Node<T>::setValue(T v) {
   value = v;
 }
 
-inline Node* Node::getNext() const {
+template <typename T>
+inline Node<T>* Node<T>::getNext() const {
   return next;
 }
 
-inline int Node::getValue() const {
+template <typename T>
+inline T Node<T>::getValue() const {
   return value;
 }
 
-inline bool Node::hasNext() const {
+template <typename T>
+inline bool Node<T>::hasNext() const {
   return next != 0;
 }
 
