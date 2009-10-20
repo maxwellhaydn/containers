@@ -27,7 +27,7 @@ class SList {
      *
      * @param other the list to assign from
      */
-    //SList& operator=(const SList& other);
+    SList& operator=(const SList& other);
 
     /**
      * Append an item to the end of the list.
