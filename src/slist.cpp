@@ -44,19 +44,21 @@ SList::~SList() {
 
 void SList::append(int value) {
   Node *newNode = new Node(value);
+
+  // If list is empty, the new node becomes the head
   if (isEmpty()) {
     head = newNode;
+    return;
   }
-  else {
-    // Find the last node in the list
-    Node *current = head;
-    while (current->hasNext()) {
-      current = current->getNext();
-    }
 
-    // Append newNode to the last node
-    current->setNext(newNode);
+  // Traverse the list to the last node
+  Node *current = head;
+  while (current->hasNext()) {
+    current = current->getNext();
   }
+
+  // Append new node to the last node
+  current->setNext(newNode);
 }
 
 void SList::clear() {
