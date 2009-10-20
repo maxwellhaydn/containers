@@ -69,17 +69,17 @@ void SList::clear() {
 }
 
 void SList::printContents() {
+  // If list is empty, print "Empty List"
   if (isEmpty()) {
     std::cout << "Empty List" << std::endl;
+    return;
   }
-  else {
-    Node *current = head;
-    std::cout << current->getValue() << std::endl;
 
-    while (current->hasNext()) {
-      current = current->getNext();
-      std::cout << current->getValue() << std::endl;
-    }
-  }
+  // Traverse the list, printing contents along the way
+  Node *current = head;
+  do {
+    std::cout << current->getValue() << std::endl;
+    current = current->getNext();
+  } while (current != 0);
 }
 
