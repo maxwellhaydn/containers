@@ -1,8 +1,7 @@
 // Implementation of a singly-linked list
 
-#include "slist.h"
-
 #include <iostream>
+#include "slist.h"
 
 SList::SList(const SList& other) {
   head = 0;
